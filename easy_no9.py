@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/palindrome-number/
 
+# O(n)
 class Solution1:
     def isPalindrome(self, x: int) -> bool:
         strx = str(x)
@@ -13,6 +14,7 @@ class Solution1:
             idx +=1
         return flag
 
+# O(n)
 class Solution2:
     def isPalindrome(self, x: int) -> bool:
         strx = str(x)
