@@ -38,6 +38,18 @@ class Solution2:
         keepdisct(self.res, head)
         return self.res.next
 
+class Solution3:
+    def deleteDuplicates(self, head):
+        if not head: return head
+
+        cur = head
+        while cur.next:
+            if cur.next.val == cur.val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+        return head
+
 test_cases = [
     [],
     [1],
@@ -45,6 +57,7 @@ test_cases = [
     [1,1,1,3],
     [1,1,1,1,4],
     [1,1,2,3,3],
+    [1,2,2,2,4],
 ]
 
 def build_link(ls):
@@ -69,10 +82,14 @@ def print_node(node):
         cur = cur.next
 
 
-for i in test_cases:
-    res = Solution1().deleteDuplicates(i)
-    print_node(res)
+# for i in test_cases:
+#     res = Solution1().deleteDuplicates(i)
+#     print_node(res)
+# print('------------------')
+# for i in test_cases:
+#     res = Solution2().deleteDuplicates(i)
+#     print_node(res)
 print('------------------')
 for i in test_cases:
-    res = Solution2().deleteDuplicates(i)
+    res = Solution3().deleteDuplicates(i)
     print_node(res)
