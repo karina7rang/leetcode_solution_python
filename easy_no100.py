@@ -58,6 +58,17 @@ class Solution3:
                 return False
         
         return myfunc(p,q)
+
+
+class Solution3:
+    def isSameTree(self,p,q):
+        if p and q:
+            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        elif not p and not q:
+            return True
+        else:
+            return False
+            
 test_cases = [
     [[1,2,3],[1,2,3]],
     [[1,2],[1,None,2]],
