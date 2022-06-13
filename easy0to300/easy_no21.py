@@ -46,6 +46,23 @@ class Solution2:
         return res.next
 
 
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        res = ListNode(None)
+        pointer = res
+        while list1 and list2:
+            if list1.val<=list2.val:
+                pointer.next = ListNode(list1.val)
+                list1 = list1.next
+            else:
+                pointer.next = ListNode(list2.val)
+                list2 = list2.next
+            pointer = pointer.next
+        if list1:
+            pointer.next = list1
+        else:
+            pointer.next = list2
+        return res.next
 
 
 
